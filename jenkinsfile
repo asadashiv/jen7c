@@ -1,1 +1,22 @@
-
+pipeline {
+    agent any
+      
+    stages {
+        stage('clone'){
+            steps {
+                
+                echo " cloned from git"
+            
+            }
+        }
+        stage('build'){
+           agent {label 'slavec'}
+            steps {
+                sh '''
+                cd /home/jenkins/workspace/buildc
+                make 
+                '''
+            }
+        }
+    }
+}
