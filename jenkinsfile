@@ -7,7 +7,7 @@ pipeline {
             steps {
                 
                 echo " cloned from git"
-                sh sleep 3
+                sh 'sleep 3'
             
             }
         }
